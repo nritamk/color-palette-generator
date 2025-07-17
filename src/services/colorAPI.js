@@ -13,11 +13,11 @@ const colorTransformer = (colorsArr) => {
   });
 };
 
-export const getRandomPalatte = (controller) => {
+export const getRandomPalatte = (controller,mode) => {
   const api = async () => {
     try {
       const res = await fetch(
-        `https://www.thecolorapi.com/scheme?hex=${getRandomHexColor()}&mode=monochrome&count=5`,
+        `https://www.thecolorapi.com/scheme?hex=${getRandomHexColor()}&mode=${mode}&count=5`,
         {
           signal: controller.signal,
         }
